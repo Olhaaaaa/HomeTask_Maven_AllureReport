@@ -1,11 +1,14 @@
 package pages;
 
+import decorator.Button;
+import decorator.TextInput;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import util.DriverFactoryMultiton;
 
 
 public class HomePage extends BasePage {
+
     @FindBy(xpath = "//input[contains(@class,'search-form')]")
     private WebElement searchInput;
 

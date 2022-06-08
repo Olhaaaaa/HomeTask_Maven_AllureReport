@@ -1,25 +1,25 @@
 package tests;
 
-import org.easetech.easytest.annotation.DataLoader;
-import org.easetech.easytest.annotation.Param;
-import org.easetech.easytest.loader.LoaderType;
-import org.easetech.easytest.runner.DataDrivenTestRunner;
 import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.ProductPage;
 import pages.SearchResultsPage;
+import util.DriverFactoryMultiton;
+
 import java.time.Duration;
 
-@RunWith(DataDrivenTestRunner.class)
+@Listeners
 public class AddToCartTest extends BaseTest {
 
-    @Test
-    @DataLoader(filePaths = "testCSVData.csv", loaderType = LoaderType.CSV)
-    public void checkTotalPriceInCart(@Param(name = "searchKeyword") String searchKeyword,
-                                      @Param(name = "brandKeyword") String brandKeyword,
-                                      @Param(name = "totalPrice") String totalPrice) throws InterruptedException {
+    WebDriver driver = DriverFactoryMultiton.getInstance().getDriver();
+
+    @Parameters({"search", "brand", "price"})
+    @Test(suiteName = "AddToCartTestSuite")
+    public void checkTotalPriceInCart(String searchKeyword, String brandKeyword, String totalPrice) throws InterruptedException {
         HomePage homePage = new HomePage();
         homePage.waitVisibilityOfElement(Duration.ofSeconds(30), homePage.getSearchByKeyword());
         homePage.searchByKeyword(searchKeyword);

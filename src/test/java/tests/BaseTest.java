@@ -1,21 +1,21 @@
 package tests;
 
-import org.junit.After;
-import org.junit.Before;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import util.DriverFactoryMultiton;
 
 import java.io.IOException;
 
 public class BaseTest {
 
-    @Before
+    @BeforeTest
     public void profileSetUp() throws IOException {
         DriverFactoryMultiton.getInstance().setDriver();
         DriverFactoryMultiton.getInstance().getDriver();
         DriverFactoryMultiton.getInstance().getBrowserURL();
     }
 
-    @After
+    @AfterTest
     public void tearDown() {
         DriverFactoryMultiton.getInstance().driverClose();
     }

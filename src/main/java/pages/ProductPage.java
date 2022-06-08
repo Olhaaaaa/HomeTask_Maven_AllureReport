@@ -1,9 +1,14 @@
 package pages;
 
+import decorator.Button;
+import decorator.DisplayElement;
+import decorator.TextField;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import util.DriverFactoryMultiton;
+
+import java.time.Duration;
 
 public class ProductPage extends BasePage {
     @FindBy(xpath = "//li[contains(@class,'buttons__item ng')]")
@@ -11,6 +16,9 @@ public class ProductPage extends BasePage {
 
     @FindBy(xpath = "//rz-cart//button[@opencart]")
     private WebElement cartButton;
+
+    @FindBy(xpath = "//rz-cart//button[@opencart]")
+    private WebElement popUp;
 
     @FindBy(xpath = "//div[@class='modal__content']")
     private WebElement popUpContent;
@@ -38,12 +46,7 @@ public class ProductPage extends BasePage {
     }
 
     public void checkPopUp() {
-        if (popUpContent.isDisplayed()) {
-            popUpClose.click();
-            cartButton.click();
-        } else {
-            cartButton.click();
-        }
+        waitVisibilityOfElement(Duration.ofSeconds(30), popUp);
     }
 
 }
