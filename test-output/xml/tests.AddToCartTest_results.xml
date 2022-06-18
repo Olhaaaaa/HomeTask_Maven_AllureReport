@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.AddToCartTest4"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="50.519">
+  <properties />
+  
+  
+            <testcase name="checkTotalPriceInCart" time="50.519" classname="tests.AddToCartTest" />
+      
+</testsuite>
