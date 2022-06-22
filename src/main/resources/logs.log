@@ -1567,4 +1567,16 @@
   2022-06-18 19:40:04 INFO  Utils:112 - [TestNG] Running:
   D:\EPAM_QA_AUTUMN\IdeaProjectsMaven\HomeTask_Parallel_PageFactory\testng.xml
 
+  2022-06-22 20:28:17 WARN  TestNG:133 - Ignoring duplicate listener : util.AllureListener
+  2022-06-22 20:28:17 WARN  TestNG:133 - Ignoring duplicate listener : util.AllureListener
+  2022-06-22 20:28:17 WARN  TestNG:133 - Ignoring duplicate listener : util.AllureListener
+  2022-06-22 20:28:17 INFO  Utils:112 - [TestNG] Running:
+  D:\EPAM_QA_AUTUMN\IdeaProjectsMaven\HomeTask_Parallel_PageFactoryAllure2\suite1.xml
+
+  2022-06-22 20:31:29 WARN  TestNG:133 - Ignoring duplicate listener : util.AllureListener
+  2022-06-22 20:31:29 WARN  TestNG:133 - Ignoring duplicate listener : util.AllureListener
+  2022-06-22 20:31:29 WARN  TestNG:133 - Ignoring duplicate listener : util.AllureListener
+  2022-06-22 20:31:30 INFO  Utils:112 - [TestNG] Running:
+  D:\EPAM_QA_AUTUMN\IdeaProjectsMaven\HomeTask_Parallel_PageFactoryAllure2\suite1.xml
+
   
